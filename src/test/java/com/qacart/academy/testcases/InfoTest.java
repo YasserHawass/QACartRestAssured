@@ -30,10 +30,13 @@ public class InfoTest {
         System.out.println("Test Case 2");
 
         Header typeHeader = new Header("type", "WEB");
+        Header languageHeader = new Header("language", "JAVA");
+
 
         given()
                 .baseUri("https://todo.qacart.com")
                 .header(typeHeader)
+                .header(languageHeader)
                 .log().all()
         .when()
                 .get("api/v1/info/courses")
