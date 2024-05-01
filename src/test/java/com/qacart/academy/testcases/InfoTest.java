@@ -92,4 +92,61 @@ public class InfoTest {
 
         System.out.println("-------------------------------------------------------------------");
     }
+
+    @Test
+    public void shouldBeAbleToGetLecturesInfo1() {
+        System.out.println("Test Case 5");
+
+        given()
+                .baseUri("https://todo.qacart.com")
+                .queryParam("mode", "VIDEO")
+                .queryParam("type", "FREE")
+                .log().all()
+        .when()
+                .get("api/v1/info/lectures")
+        .then()
+                .log().all()
+                .assertThat().statusCode(200);
+
+        System.out.println("-------------------------------------------------------------------");
+    }
+
+    @Test
+    public void shouldBeAbleToGetLecturesInfo2() {
+        System.out.println("Test Case 6");
+
+        given()
+                .baseUri("https://todo.qacart.com")
+                .queryParams("mode", "VIDEO","type", "FREE")
+                .log().all()
+                .when()
+                .get("api/v1/info/lectures")
+                .then()
+                .log().all()
+                .assertThat().statusCode(200);
+
+        System.out.println("-------------------------------------------------------------------");
+    }
+
+    @Test
+    public void shouldBeAbleToGetLecturesInfo3() {
+        System.out.println("Test Case 7");
+
+        HashMap<String, String> infoParams = new HashMap<>();
+
+        infoParams.put("type", "FREE");
+        infoParams.put("mode", "VIDEO");
+
+        given()
+                .baseUri("https://todo.qacart.com")
+                .queryParams(infoParams)
+                .log().all()
+        .when()
+                .get("api/v1/info/lectures")
+        .then()
+                .log().all()
+                .assertThat().statusCode(200);
+
+        System.out.println("-------------------------------------------------------------------");
+    }
 }
