@@ -1,2 +1,2 @@
-## QACart Rest Assured
-This repository contains the labs of the Rest Assured Course by QACart Academy
+## QACart RestAssured
+This repository contains the labs of the Complete RestAssured Course by QACart Academy
