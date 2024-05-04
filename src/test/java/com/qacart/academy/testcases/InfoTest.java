@@ -10,7 +10,13 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.hasEntry;
 
+/**
+ * The type Info test.
+ */
 public class InfoTest {
+    /**
+     * Should be able to get courses info 1.
+     */
     @Test
     public void shouldBeAbleToGetCoursesInfo1() {
         System.out.println("Test Case 1");
@@ -28,6 +34,9 @@ public class InfoTest {
         System.out.println("-------------------------------------------------------------------");
     }
 
+    /**
+     * Should be able to get courses info 2.
+     */
     @Test
     public void shouldBeAbleToGetCoursesInfo2() {
         System.out.println("Test Case 2");
@@ -49,6 +58,9 @@ public class InfoTest {
         System.out.println("-------------------------------------------------------------------");
     }
 
+    /**
+     * Should be able to get courses info 3.
+     */
     @Test
     public void shouldBeAbleToGetCoursesInfo3() {
         System.out.println("Test Case 3");
@@ -71,6 +83,9 @@ public class InfoTest {
         System.out.println("-------------------------------------------------------------------");
     }
 
+    /**
+     * Should be able to get courses info 4.
+     */
     @Test
     public void shouldBeAbleToGetCoursesInfo4() {
         System.out.println("Test Case 4");
@@ -93,6 +108,9 @@ public class InfoTest {
         System.out.println("-------------------------------------------------------------------");
     }
 
+    /**
+     * Should be able to get lectures info 1.
+     */
     @Test
     public void shouldBeAbleToGetLecturesInfo1() {
         System.out.println("Test Case 5");
@@ -111,6 +129,9 @@ public class InfoTest {
         System.out.println("-------------------------------------------------------------------");
     }
 
+    /**
+     * Should be able to get lectures info 2.
+     */
     @Test
     public void shouldBeAbleToGetLecturesInfo2() {
         System.out.println("Test Case 6");
@@ -128,6 +149,9 @@ public class InfoTest {
         System.out.println("-------------------------------------------------------------------");
     }
 
+    /**
+     * Should be able to get lectures info 3.
+     */
     @Test
     public void shouldBeAbleToGetLecturesInfo3() {
         System.out.println("Test Case 7");
