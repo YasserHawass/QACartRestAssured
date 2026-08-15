@@ -1,5 +1,6 @@
 package com.qacart.academy.testcases;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import org.testng.annotations.Test;
@@ -21,7 +22,7 @@ public class InfoTest {
     public void shouldBeAbleToGetCoursesInfo1() {
         System.out.println("Test Case 1");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .headers("type", "WEB","language", "JAVA")
                 .log().all()
@@ -44,7 +45,7 @@ public class InfoTest {
         Header typeHeader = new Header("type", "WEB");
         Header languageHeader = new Header("language", "JAVA");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .header(typeHeader)
                 .header(languageHeader)
@@ -70,7 +71,7 @@ public class InfoTest {
 
         Headers infoHeaders = new Headers(typeHeader, languageHeader);
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .headers(infoHeaders)
                 .log().all()
@@ -94,7 +95,7 @@ public class InfoTest {
         infoHeaders.put("type", "WEB");
         infoHeaders.put("language", "JAVA");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .headers(infoHeaders)
                 .log().all()
@@ -115,7 +116,7 @@ public class InfoTest {
     public void shouldBeAbleToGetLecturesInfo1() {
         System.out.println("Test Case 5");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .queryParam("mode", "VIDEO")
                 .queryParam("type", "FREE")
@@ -136,7 +137,7 @@ public class InfoTest {
     public void shouldBeAbleToGetLecturesInfo2() {
         System.out.println("Test Case 6");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .queryParams("mode", "VIDEO","type", "FREE")
                 .log().all()
@@ -161,7 +162,7 @@ public class InfoTest {
         infoParams.put("type", "FREE");
         infoParams.put("mode", "VIDEO");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .queryParams(infoParams)
                 .log().all()

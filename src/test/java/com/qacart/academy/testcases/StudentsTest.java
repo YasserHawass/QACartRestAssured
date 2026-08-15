@@ -1,6 +1,7 @@
 package com.qacart.academy.testcases;
 
 import com.qacart.academy.pojo.LoginPojo;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
@@ -25,7 +26,7 @@ public class StudentsTest {
                 "    \"password\": \"Test1234\"\n" +
                 "}";
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .header("Content-Type", "application/json")
                 .body(body)
@@ -51,7 +52,7 @@ public class StudentsTest {
                 "    \"password\": \"Test1234\"\n" +
                 "}";
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
                 .body(body)
@@ -74,7 +75,7 @@ public class StudentsTest {
 
         File body = new File("src/test/resources/login.json");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
                 .body(body)
@@ -100,7 +101,7 @@ public class StudentsTest {
         body.put("email", "yasser.qacart.portfolio@example.com");
         body.put("password", "Test1234");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
                 .body(body)
@@ -123,7 +124,7 @@ public class StudentsTest {
 
         LoginPojo body = new LoginPojo("yasser.qacart.portfolio@example.com", "Test1234");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
                 .body(body)
@@ -146,7 +147,7 @@ public class StudentsTest {
 
         LoginPojo body = new LoginPojo("yasser.qacart.portfolio@example.com", "Test1234");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
                 .body(body)
@@ -172,7 +173,7 @@ public class StudentsTest {
         body.put("email", "yasser.qacart.portfolio@example.com");
         body.put("password", "Test1234");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
                 .body(body)
@@ -195,7 +196,7 @@ public class StudentsTest {
 
         File json = new File("src/test/resources/login.json");
 
-        given()
+        given().filter(new AllureRestAssured())
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
                 .body(json)

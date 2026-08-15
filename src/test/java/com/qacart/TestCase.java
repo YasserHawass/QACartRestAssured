@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class TestCase {
     public void test1() {
         System.out.println("Test Case 1");
 
-        given().baseUri("https://66322dc2c51e14d695639a13.mockapi.io/api/v1")
+        given().filter(new AllureRestAssured()).baseUri("https://66322dc2c51e14d695639a13.mockapi.io/api/v1")
             .when().get("users")
             .then().log().all()
             .assertThat().statusCode(200)
@@ -36,7 +37,7 @@ public class TestCase {
     public void test2() {
         System.out.println("Test Case 2");
 
-        Response res = given().baseUri("https://66322dc2c51e14d695639a13.mockapi.io")
+        Response res = given().filter(new AllureRestAssured()).baseUri("https://66322dc2c51e14d695639a13.mockapi.io")
                         .when().get("/api/v1/users")
                         .then().extract().response();
 
@@ -53,7 +54,7 @@ public class TestCase {
     public void test3() {
         System.out.println("Test Case 3");
 
-        String name = given().baseUri("https://66322dc2c51e14d695639a13.mockapi.io")
+        String name = given().filter(new AllureRestAssured()).baseUri("https://66322dc2c51e14d695639a13.mockapi.io")
                 .when().get("/api/v1/users")
                 .then().extract().response().path("[0].name");
 
@@ -66,7 +67,7 @@ public class TestCase {
     public void test4() {
         System.out.println("Test Case 4");
 
-        given().baseUri("https://66322dc2c51e14d695639a13.mockapi.io").log().all()
+        given().filter(new AllureRestAssured()).baseUri("https://66322dc2c51e14d695639a13.mockapi.io").log().all()
                 .when().get("/api/v1/users")
                 .then();
 
@@ -77,7 +78,7 @@ public class TestCase {
     public void test5() {
         System.out.println("Test Case 5");
 
-        given().baseUri("https://66322dc2c51e14d695639a13.mockapi.io/api/v1")
+        given().filter(new AllureRestAssured()).baseUri("https://66322dc2c51e14d695639a13.mockapi.io/api/v1")
                 .when().get("users")
                 .then().log().ifValidationFails()
                 .assertThat().body("[0].name", is(equalTo("Kathryn Goyette")));
