@@ -21,7 +21,7 @@ public class StudentsTest {
         System.out.println("Test Case 1");
 
         String body = "{\n" +
-                "    \"email\" : \"hatem@example.com\",\n" +
+                "    \"email\" : \"yasser.qacart.portfolio@example.com\",\n" +
                 "    \"password\": \"Test1234\"\n" +
                 "}";
 
@@ -47,7 +47,7 @@ public class StudentsTest {
         System.out.println("Test Case 2");
 
         String body = "{\n" +
-                "    \"email\" : \"hatem@example.com\",\n" +
+                "    \"email\" : \"yasser.qacart.portfolio@example.com\",\n" +
                 "    \"password\": \"Test1234\"\n" +
                 "}";
 
@@ -97,7 +97,7 @@ public class StudentsTest {
 
         HashMap <String, String> body = new HashMap<>();
 
-        body.put("email", "hatem@example.com");
+        body.put("email", "yasser.qacart.portfolio@example.com");
         body.put("password", "Test1234");
 
         given()
@@ -121,15 +121,12 @@ public class StudentsTest {
     public void shouldBeAbleToLoginToTheApplication5() {
         System.out.println("Test Case 5");
 
-        //LoginPojo body = new LoginPojo();
-
-        //body.setEmail("hatem@example.com");
-        //body.setPassword("Test1234");
+        LoginPojo body = new LoginPojo("yasser.qacart.portfolio@example.com", "Test1234");
 
         given()
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
-                //.body(body)
+                .body(body)
                 .log().all()
         .when()
                 .post("api/v1/students/login")
@@ -147,7 +144,7 @@ public class StudentsTest {
     public void shouldBeAbleToLoginToTheApplication6() {
         System.out.println("Test Case 6");
 
-        LoginPojo body = new LoginPojo("hatem@example.com", "Test1234");
+        LoginPojo body = new LoginPojo("yasser.qacart.portfolio@example.com", "Test1234");
 
         given()
                 .baseUri("https://todo.qacart.com")
@@ -170,14 +167,15 @@ public class StudentsTest {
     public void shouldBeAbleToLoginToTheApplication7() {
         System.out.println("Test Case 7");
 
-        HashMap<String, String> formParam = new HashMap<>();
+        HashMap<String, String> body = new HashMap<>();
 
-        formParam.put("Foo", "1234");
+        body.put("email", "yasser.qacart.portfolio@example.com");
+        body.put("password", "Test1234");
 
         given()
                 .baseUri("https://todo.qacart.com")
-                .contentType(ContentType.URLENC)
-                //.formParam(formParam)
+                .contentType(ContentType.JSON)
+                .body(body)
                 .log().all()
         .when()
                 .post("api/v1/students/login")
@@ -200,7 +198,7 @@ public class StudentsTest {
         given()
                 .baseUri("https://todo.qacart.com")
                 .contentType(ContentType.JSON)
-                .multiPart("file", json)
+                .body(json)
                 .log().all()
                 .when()
                 .post("api/v1/students/login")

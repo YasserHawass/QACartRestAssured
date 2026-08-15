@@ -38,7 +38,7 @@ public class CoursesTest {
 
         given()
                 .baseUri("https://todo.qacart.com")
-                .auth().oauth2("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjFiNWJmYTI5MzRhMDAxNDI4ZDRhNyIsImZpcnN0TmFtZSI6IkhhdGVtIiwiaWF0IjoxNzE0ODU1NTgxfQ.IxOjsMEL57ciAnGpSpBIzciUfZsVmnovayIlR9Rb07I")
+                .auth().oauth2("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjFiNWJmYTI5MzRhMDAxNDI4ZDRhNyIsImZpcnN0TmFtZSI6IkhhdGVtIiwiaWF0IjoxNzE0ODU1NTgxfQ.IxOjsMEL57ciAnGpSpBIzciUfZsVmnovayIlR9Rb07I")
                 .when()
                 .get("api/v1/courses")
                 .then()

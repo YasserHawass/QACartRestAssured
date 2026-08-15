@@ -20,14 +20,14 @@ public class TestCase {
             .when().get("users")
             .then().log().all()
             .assertThat().statusCode(200)
-            .assertThat().body("[0].name", is(equalTo("Yasser")),
-                        "name", hasItems("Mahmoud", "Yasser"),
+            .assertThat().body("[0].name", is(equalTo("Kathryn Goyette")),
+                        "name", hasItems("Kathryn Goyette", "Jodi Osinski"),
                         "name", not(hasItem("ahmed")),
                         "country", is(not(empty())),
-                        "id", hasSize(10),
-                        "createdAt.size()", is(equalTo(10)),
+                        "id", hasSize(16),
+                        "createdAt.size()", is(equalTo(16)),
                         "createdAt", everyItem(startsWith("2024")),
-                        "[9]", hasEntry("name", "Mahmoud"));
+                        "[9]", hasEntry("name", "Roxanne Roberts Jr."));
 
         System.out.println("-------------------------------------------------------------------");
     }
@@ -80,7 +80,7 @@ public class TestCase {
         given().baseUri("https://66322dc2c51e14d695639a13.mockapi.io/api/v1")
                 .when().get("users")
                 .then().log().ifValidationFails()
-                .assertThat().body("[0].name", is(equalTo("Yasser")));
+                .assertThat().body("[0].name", is(equalTo("Kathryn Goyette")));
 
         System.out.println("-------------------------------------------------------------------");
     }
